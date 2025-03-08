@@ -8,10 +8,10 @@ spec:
   chart:
     spec:
       chart: kafka
-      version: "25.2.0"
+      version: 23.0.0
       sourceRef:
-        kind: HelmRepository
-        name: bitnami
+        kind: GitRepository
+        name: flux-system
         namespace: flux-system
   values:
     replicaCount: 1
@@ -19,5 +19,6 @@ spec:
       enabled: false
     zookeeper:
       enabled: true
+      replicaCount: 1
       persistence:
         enabled: false
