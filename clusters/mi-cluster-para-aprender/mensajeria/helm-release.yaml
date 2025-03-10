@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: strimzi
-  namespace: mensajeria
+  namespace: flux-system
 spec:
   releaseName: strimzi
   chart:
@@ -15,5 +15,4 @@ spec:
         namespace: flux-system
   interval: 5m
   values:
-    watchNamespaces: ["mensajeria"]
-    replicaCount: 1
+    installCRDs: true
